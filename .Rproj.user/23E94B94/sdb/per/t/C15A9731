@@ -1,0 +1,17 @@
+{
+    "contents" : "library(dplyr)\nlibrary(lubridate)\n\nelec_consump = read.table(\"household_power_consumption.txt\", header = TRUE, sep = \";\",\n                          stringsAsFactors = FALSE)\nelec_consump[1] = as.Date(elec_consump[,1], format = \"%d/%m/%Y\")\n\nelec_consump = filter(elec_consump, year(Date)==2007, month(Date)==2, \n                      mday(Date) == 1|mday(Date)==2)\n\nelec_consump[ ,1] = as.character(elec_consump[, 1])\ndate.time = paste(elec_consump[ ,1], elec_consump[ ,2], sep =\" \")\ndate.time = strptime(date.time, format = \"%Y-%m-%d %H:%M:%S\")\n\nelec_consump = data.frame(date.time, elec_consump[3:9])\nfor (i in 2:8) {\n  elec_consump[, i] = as.numeric(elec_consump[ ,i])\n}\n\nwindows()\npar(pin = c(480, 480))\nhist(elec_consump$Global_active_power, col = \"orangered1\", \n    main = \"Global Active Power\", xlab = \"Global Active Power (kilowatts)\")\n\ndev.copy(png, 'plot1.png')\ndev.off()\n",
+    "created" : 1425698420560.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2228789850",
+    "id" : "C15A9731",
+    "lastKnownWriteTime" : 1425702519,
+    "path" : "~/Data project/Exploratory data analysis/Project 1/project1.R",
+    "project_path" : "project1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1425702764706.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B801BDD6",
+    "lastKnownWriteTime" : 28429427921584242,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "elec_consump",
+        "contentUrl" : "content?title=elec_consump&file=65f0b33fac2a46f4ac7b3486260d2de6.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 8,
+        "totalObservations" : 2880,
+        "variables" : 8
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
